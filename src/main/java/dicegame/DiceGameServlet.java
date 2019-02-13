@@ -10,14 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 public class DiceGameServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private Player[] players;
-    private static final int PLYR = 1;
     private int count = 0;
 
     /**
      * Constructor
      */
     public DiceGameServlet() {
-        this.players = new Player[PLYR];
+        this.players = new Player[10];
     }
 
     /**

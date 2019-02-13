@@ -21,6 +21,8 @@ public class Cup {
 
     /**
      * Method for rolling the cup.
+     * 
+     * @return the value of diceOne and diceTwo in a String
      */
     public String rollDices() {
         Dice diceOne = new Dice();
