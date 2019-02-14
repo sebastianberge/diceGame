@@ -15,19 +15,10 @@
 		<title>The DiceGame | Ongoing game</title>
 	</head>
 	<body>
-		<div class="jumbotron text-center">
-            <form class="form-inline" action="<%=request.getContextPath()%>/DiceGame" method="POST">
-                <h2>Add players</h2>
-                <label for="newPlayer">Add new player</label>
-                <input class="form-control" type="text" name="newPlayer"/>
-                <input type="submit" class="btn btn-primary" value="Submit"/>
-            </form>
-            <div class="row">
-                <div class="col-10 mx-auto px-2">
-
-                </div>
-            </div>
-        </div>
+		<jsp:useBean id="user" class="dicegame.beans.User" scope="session"></jsp:useBean>
+        <jsp:setProperty property="firstName" name="user" value="Chaand" />
+        <jsp:setProperty property="lastName" name="user" value="Sheikh" />
+        Values have been set
 
         <script
 			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

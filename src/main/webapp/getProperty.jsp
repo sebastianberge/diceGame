@@ -12,22 +12,13 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="styles.css" type="text/css" />
-		<title>The DiceGame | Ongoing game</title>
+		<title>Get property</title>
 	</head>
 	<body>
-		<div class="jumbotron text-center">
-            <form class="form-inline" action="<%=request.getContextPath()%>/DiceGame" method="POST">
-                <h2>Add players</h2>
-                <label for="newPlayer">Add new player</label>
-                <input class="form-control" type="text" name="newPlayer"/>
-                <input type="submit" class="btn btn-primary" value="Submit"/>
-            </form>
-            <div class="row">
-                <div class="col-10 mx-auto px-2">
-
-                </div>
-            </div>
-        </div>
+		<jsp:useBean id="user" class="dicegame.beans.User" scope="session"></jsp:useBean>
+        Firstname: <jsp:getProperty property="firstName" name="user" />
+        <br/>
+        Lastname: <jsp:getProperty property="lastName" name="user" />
 
         <script
 			src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

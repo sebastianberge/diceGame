@@ -1,32 +1,22 @@
-package dicegame;
+package dicegame.servlets;
 
+import dicegame.Player;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class DiceGameServlet extends HttpServlet {
+@WebServlet("/DiceGame")
+public class GameController extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private Player[] players;
-    private int count = 0;
+    Player[] players = null;
 
-    /**
-     * Constructor
-     */
-    public DiceGameServlet() {
-        this.players = new Player[10];
-    }
-
-    /**
-     * Method for adding a new player to the game. Maximum two players each game.
-     * 
-     * @param newPlayer
-     */
-    public void addPlayer(Player newPlayer) {
-        players[count] = newPlayer;
-        count++;
+    @Override
+    public void init() throws ServletException {
+        players = new Player[10];
     }
 
     /**
@@ -34,7 +24,7 @@ public class DiceGameServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+
     }
 
     /**
@@ -42,6 +32,6 @@ public class DiceGameServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+
     }
 }
